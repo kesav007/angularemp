@@ -1,13 +1,14 @@
-<fieldset>
-	<label for="fName">First Name:</label> 
-	<input id="fName" type="text" ng-model="employee.firstName"></input>
-	<label for="lName">Last Name: </label>
-	<input id="lName" type="text" ng-model="employee.lastName"></input>
-	<label for="email">Email: </label>
-	<input id="email" type="text" ng-model="employee.email"></input>
-	<input type="text"></input>
-	<br/>
-	<br/>
-	<button type="submit" class="btn btn-primary" ng-click="update(employee)">Save</button>
-	<button type="cancel" class="btn btn-default" ng-click="cancel()">cancel</button>
-</fieldset>
+<form>
+	<fieldset>
+		<label for="fName">First Name:</label> 
+		<input id="fName" type="text" ng-model="employee.firstName"></input>	
+		<label for="lName">Last Name: </label>
+		<input id="lName" type="text" ng-model="employee.lastName"></input>
+		<label for="email">Email: </label>
+		<input id="email" type="text" ng-model="employee.email"></input>
+		<br/>
+		<br/>
+		<button type="submit" class="btn btn-primary" ng-click="update(employee)">Save</button>
+		<button type="cancel" class="btn btn-default" ng-click="cancel()">cancel</button>
+	</fieldset>
+</form>

@@ -4,6 +4,7 @@ empApp.factory('EmployeesService', function($http, $log, $q, $resource){
 
 	var resource = $resource('data/emp/:id', {id:"@id"});
 
+/*
 	result.getEmployeeById = function(empId){
 		var deferred = $q.defer();
 		resource.get({id: empId}, 		
@@ -15,6 +16,11 @@ empApp.factory('EmployeesService', function($http, $log, $q, $resource){
 			});		
 		return deferred.promise;
 	};
+*/
+
+	result.getEmployeeById = function(empId){
+		return resource.get({id: empId});
+	}
 
 	result.getEmployees = function(){
 		return resource.query();
