@@ -26,7 +26,14 @@ empApp.factory('EmployeesService', function($http, $log, $q, $resource){
 		return resource.query();
 	};
 
-	result.saveOrUpdate = function(employee){
+	result.create = function(employee){
+		max = 1000;
+		min = 10;
+		employee.id = Math.floor(Math.random() * (max - min + 1)) + min;
+		resource.save(employee);
+	}
+
+	result.update = function(employee){
 		employee.$save();
 	}
 

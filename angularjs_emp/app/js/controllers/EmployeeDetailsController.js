@@ -6,11 +6,20 @@ empApp.controller('EmployeeDetailsController', function($scope, $routeParams, Em
 		return resp;
 	});
 */
-	$scope.employee = EmployeesService.getEmployeeById($routeParams.empId);
+	$scope.employee = {};
 	
+	if($routeParams.empId != 0){
+		$scope.employee = EmployeesService.getEmployeeById($routeParams.empId);	
+	}
+
 	$scope.update = function(employee){
-		console.log(employee);
-		EmployeesService.saveOrUpdate(employee);
+		if(!employee.id){
+			EmployeesService.create(employee);
+		}
+		else{
+			EmployeesService.update(employee);	
+		}
+		return employee;
 	};
 
 	$scope.cancel = function(){
